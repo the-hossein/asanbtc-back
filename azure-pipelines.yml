@@ -47,7 +47,7 @@ steps:
 - task: WindowsMachineFileCopy@2
   inputs:
     SourcePath: '$(Build.ArtifactStagingDirectory)\publish'
-    MachineNames: '65.108.156.106'  # Remove the port number
+    MachineNames: '65.108.156.106:5186'  # Remove the port number
     AdminUserName: 'Administrator'
     AdminPassword: 'HH@@mmiidd5353'
     TargetPath: '\\65.108.156.106\c$\inetpub\wwwroot\AsanBTCApi'  # Adjust the path
