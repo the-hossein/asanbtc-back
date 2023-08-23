@@ -29,10 +29,7 @@ steps:
   inputs:
     command: 'publish'
     publishWebProjects: true
-    zipAfterPublish: false
-# Build and test ASP.NET projects.
-# Add steps that publish symbols, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
+    arguments: '--configuration $(BuildConfiguration) --output $(build.artifactStagingDirectory)\publish'
 - task: VSTest@2
   inputs:
     platform: '$(buildPlatform)'
@@ -40,7 +37,7 @@ steps:
 
 - task: WindowsMachineFileCopy@2
   inputs:
-    SourcePath: '$(Build.ArtifactStagingDirectory)/publish'
+    SourcePath: '$(Build.ArtifactStagingDirectory)\publish'
     MachineNames: '65.108.156.106:5186'
     AdminUserName: 'Administrator'
     AdminPassword: 'HH@@mmiidd5353'
