@@ -30,6 +30,7 @@ steps:
     command: 'publish'
     publishWebProjects: true
     arguments: '--configuration $(BuildConfiguration) --output $(build.artifactStagingDirectory)\publish'
+    zipAfterPublish: false
 - task: VSTest@2
   inputs:
     platform: '$(buildPlatform)'
