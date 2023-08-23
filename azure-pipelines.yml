@@ -32,3 +32,11 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+- task: WindowsMachineFileCopy@2
+  inputs:
+    SourcePath: '''$(Build.ArtifactStagingDirectory)/publish'''
+    MachineNames: '65.108.156.106:5186'
+    AdminUserName: 'Administrator'
+    AdminPassword: 'HH@@mmiidd5353'
+    TargetPath: '\65.108.156.106:5186\c$\inetpub\wwwroot\AsanBTCApi'
+    CleanTargetBeforeCopy: true
