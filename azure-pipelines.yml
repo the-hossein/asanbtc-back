@@ -34,7 +34,7 @@ steps:
     configuration: '$(buildConfiguration)'
 - task: WindowsMachineFileCopy@2
   inputs:
-    SourcePath: 'D:\a\1\s\asanbtc-api\bin\Release\net7.0\publish\'
+    SourcePath: 'D:\a\1\s\asanbtc-api\bin\Release\net7.0\publish'
     MachineNames: '65.108.156.106:5186'
     AdminUserName: 'Administrator'
     AdminPassword: 'HH@@mmiidd5353'
