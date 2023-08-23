@@ -35,11 +35,20 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
+# - task: WindowsMachineFileCopy@2
+#   inputs:
+#     SourcePath: '$(Build.ArtifactStagingDirectory)\publish'
+#     MachineNames: '65.108.156.106:5186'
+#     AdminUserName: 'Administrator'
+#     AdminPassword: 'HH@@mmiidd5353'
+#     TargetPath: '\65.108.156.106:5186\c$\inetpub\wwwroot\AsanBTCApi'
+#     CleanTargetBeforeCopy: true
+
 - task: WindowsMachineFileCopy@2
   inputs:
     SourcePath: '$(Build.ArtifactStagingDirectory)\publish'
-    MachineNames: '65.108.156.106:5186'
+    MachineNames: '65.108.156.106'  # Remove the port number
     AdminUserName: 'Administrator'
     AdminPassword: 'HH@@mmiidd5353'
-    TargetPath: '\65.108.156.106:5186\c$\inetpub\wwwroot\AsanBTCApi'
+    TargetPath: '\\65.108.156.106\c$\inetpub\wwwroot\AsanBTCApi'  # Adjust the path
     CleanTargetBeforeCopy: true
