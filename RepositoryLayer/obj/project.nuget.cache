@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FFpQ70kqIc32qI/iE4RhT7kvj7IWF+IFNwcmdnXtEKlnth98BokhS9NfY6cNmJiBVQKe6fFBfNjzM5KMibp91w==",
+  "dgSpecHash": "H+BKmbukxDXf9ejbEFAMJkLHIo+7zPdjlj5sFNr8z6iOWX8Tkcb7WIvGFFbw/Hh5cMT+ZSgMvvqwqc4sT3iZtA==",
   "success": true,
-  "projectFilePath": "/Users/rymon/Documents/hossein/asanbtc-api/RepositoryLayer/RepositoryLayer.csproj",
+  "projectFilePath": "/Users/rymon/Documents/hossein/asanbtc-back/RepositoryLayer/RepositoryLayer.csproj",
   "expectedPackageFiles": [
     "/Users/rymon/.nuget/packages/azure.core/1.24.0/azure.core.1.24.0.nupkg.sha512",
     "/Users/rymon/.nuget/packages/azure.identity/1.6.0/azure.identity.1.6.0.nupkg.sha512",

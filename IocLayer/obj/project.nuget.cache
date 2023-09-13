@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "q2nSlvlE9coJQR2VG8qzo2qcgdSsMrKSBW8NK+vQfPlpxnxfbM5Gmsw/hqrCzXQGWO6K39h4BErUusVKDNvPuw==",
+  "dgSpecHash": "LJQ3zVskTO79RaCFHBNNraBE0gFDTL2qtmyY7XFIYX0SFVrR+ADFAZzBQjtsRgPgh1ySWIzpPuD0ZXDXi4pLug==",
   "success": true,
-  "projectFilePath": "/Users/rymon/Documents/hossein/asanbtc-api/IocLayer/IocLayer.csproj",
+  "projectFilePath": "/Users/rymon/Documents/hossein/asanbtc-back/IocLayer/IocLayer.csproj",
   "expectedPackageFiles": [
     "/Users/rymon/.nuget/packages/azure.core/1.24.0/azure.core.1.24.0.nupkg.sha512",
     "/Users/rymon/.nuget/packages/azure.identity/1.6.0/azure.identity.1.6.0.nupkg.sha512",

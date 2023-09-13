@@ -4223,11 +4223,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rymon/Documents/hossein/asanbtc-api/IocLayer/IocLayer.csproj",
+      "projectUniqueName": "/Users/rymon/Documents/hossein/asanbtc-back/IocLayer/IocLayer.csproj",
       "projectName": "IocLayer",
-      "projectPath": "/Users/rymon/Documents/hossein/asanbtc-api/IocLayer/IocLayer.csproj",
+      "projectPath": "/Users/rymon/Documents/hossein/asanbtc-back/IocLayer/IocLayer.csproj",
       "packagesPath": "/Users/rymon/.nuget/packages/",
-      "outputPath": "/Users/rymon/Documents/hossein/asanbtc-api/IocLayer/obj/",
+      "outputPath": "/Users/rymon/Documents/hossein/asanbtc-back/IocLayer/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/rymon/.nuget/NuGet/NuGet.Config"
@@ -4242,11 +4242,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/rymon/Documents/hossein/asanbtc-api/RepositoryLayer/RepositoryLayer.csproj": {
-              "projectPath": "/Users/rymon/Documents/hossein/asanbtc-api/RepositoryLayer/RepositoryLayer.csproj"
+            "/Users/rymon/Documents/hossein/asanbtc-back/RepositoryLayer/RepositoryLayer.csproj": {
+              "projectPath": "/Users/rymon/Documents/hossein/asanbtc-back/RepositoryLayer/RepositoryLayer.csproj"
             },
-            "/Users/rymon/Documents/hossein/asanbtc-api/ServiceLayer/ServiceLayer.csproj": {
-              "projectPath": "/Users/rymon/Documents/hossein/asanbtc-api/ServiceLayer/ServiceLayer.csproj"
+            "/Users/rymon/Documents/hossein/asanbtc-back/ServiceLayer/ServiceLayer.csproj": {
+              "projectPath": "/Users/rymon/Documents/hossein/asanbtc-back/ServiceLayer/ServiceLayer.csproj"
             }
           }
         }
