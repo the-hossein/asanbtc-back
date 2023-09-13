@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/rymon/Documents/hossein/asanbtc-api/DataLayer/DataLayer.csproj": {}
+    "/Users/rymon/Documents/hossein/asanbtc-back/DataLayer/DataLayer.csproj": {}
   },
   "projects": {
-    "/Users/rymon/Documents/hossein/asanbtc-api/DataLayer/DataLayer.csproj": {
+    "/Users/rymon/Documents/hossein/asanbtc-back/DataLayer/DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/rymon/Documents/hossein/asanbtc-api/DataLayer/DataLayer.csproj",
+        "projectUniqueName": "/Users/rymon/Documents/hossein/asanbtc-back/DataLayer/DataLayer.csproj",
         "projectName": "DataLayer",
-        "projectPath": "/Users/rymon/Documents/hossein/asanbtc-api/DataLayer/DataLayer.csproj",
+        "projectPath": "/Users/rymon/Documents/hossein/asanbtc-back/DataLayer/DataLayer.csproj",
         "packagesPath": "/Users/rymon/.nuget/packages/",
-        "outputPath": "/Users/rymon/Documents/hossein/asanbtc-api/DataLayer/obj/",
+        "outputPath": "/Users/rymon/Documents/hossein/asanbtc-back/DataLayer/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/rymon/.nuget/NuGet/NuGet.Config"

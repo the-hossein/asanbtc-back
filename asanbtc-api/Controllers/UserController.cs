@@ -34,7 +34,7 @@ namespace asanbtc_api.Controllers
             });
         }
 
-        [HttpGet(nameof(AdminLogin)), AllowAnonymous]
+        [HttpPost(nameof(AdminLogin)), AllowAnonymous]
         public async Task<ActionResult> AdminLogin(LoginViewModel model)
         {
             var userHashedPassword = _auth.GetHashedPassword(model.Passwod);
