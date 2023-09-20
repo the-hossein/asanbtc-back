@@ -25,31 +25,24 @@ steps:
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'publish'
-    publishWebProjects: true
-    arguments: '--configuration $(BuildConfiguration) --output $(build.artifactStagingDirectory)\publish'
-    zipAfterPublish: false
-- task: VSTest@2
-  inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+# - task: DotNetCoreCLI@2
+#   inputs:
+#     command: 'publish'
+#     publishWebProjects: true
+#     arguments: '--configuration $(BuildConfiguration) --output $(build.artifactStagingDirectory)\publish'
+#     zipAfterPublish: false
+# - task: VSTest@2
+#   inputs:
+#     platform: '$(buildPlatform)'
+#     configuration: '$(buildConfiguration)'
+
+
 
 # - task: WindowsMachineFileCopy@2
 #   inputs:
 #     SourcePath: '$(Build.ArtifactStagingDirectory)\publish'
-#     MachineNames: '65.108.156.106:5186'
+#     MachineNames: '65.108.156.106:5186'  # Remove the port number
 #     AdminUserName: 'Administrator'
 #     AdminPassword: 'HH@@mmiidd5353'
-#     TargetPath: '\65.108.156.106:5186\c$\inetpub\wwwroot\AsanBTCApi'
+#     TargetPath: '\\65.108.156.106\c$\inetpub\wwwroot\AsanBTCApi'  # Adjust the path
 #     CleanTargetBeforeCopy: true
-
-- task: WindowsMachineFileCopy@2
-  inputs:
-    SourcePath: '$(Build.ArtifactStagingDirectory)\publish'
-    MachineNames: '65.108.156.106:5186'  # Remove the port number
-    AdminUserName: 'Administrator'
-    AdminPassword: 'HH@@mmiidd5353'
-    TargetPath: '\\65.108.156.106\c$\inetpub\wwwroot\AsanBTCApi'  # Adjust the path
-    CleanTargetBeforeCopy: true
