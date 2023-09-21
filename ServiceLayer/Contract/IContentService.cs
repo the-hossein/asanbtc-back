@@ -18,11 +18,13 @@ namespace ServiceLayer.Contract
         Task<IQueryable<Content>> FindListByCondition(Expression<Func<Content, bool>> Condition);
 
 
-        Task<IQueryable<object>> FindAll();
+        Task<IQueryable<Content>> FindAll();
 
         Task<Content> Create(Content NewContent);
 
         Task<Content> GetWithId(int Id);
+
+        Task<IQueryable<object>> FindWithTypeId(int ContentType);
     }
 }
 

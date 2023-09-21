@@ -15,17 +15,17 @@ namespace RepositoryLayer.Repository
 
         }
 
-        public async Task<IQueryable<object>> GetAllContent()
+        public async Task<IQueryable<object>> GetAllContent(int ContentTypeId)
         {
             //var sql = @"SELECT *
             //FROM Content As _content
             //INNER JOIN UserAccount AS _user
             //ON  _content.AuthorUserAccountID= _user.ID
             //WHERE _content.Confirmed = 1";
-            var sql = @"SELECT TOP 200 * 
+            var sql = @$"SELECT * 
 FROM Content  AS _content
 INNER JOIN UserAccount AS _user ON _content.AuthorUserAccountID = _user.ID
-WHERE _content.Confirmed = 1";
+WHERE _content.Confirmed = 1 AND _content.ContentTypeID = {ContentTypeId};";
             //            var sql = @"SELECT *
             //FROM Content As _content
             //INNER JOIN UserAccount AS _user
