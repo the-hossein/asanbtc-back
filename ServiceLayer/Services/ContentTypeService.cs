@@ -1,29 +1,26 @@
-﻿using System;
-using Microsoft.Extensions.Logging;
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
 using ServiceLayer.Contract;
 using RepositoryLayer.Contract;
 using DataLayer.Entities;
-using static Mysqlx.Expect.Open.Types;
 
 namespace ServiceLayer.Services
 {
-    public class ContentService : IContentService
+    public class ContentTypeService : IContentTypeService
     {
-        private readonly IContentRepository _Content;
+        private readonly IContentTypeRepository _ContentType;
         private readonly IDapperRepository _Dapper;
-        public ContentService(IContentRepository Content, IDapperRepository Dapper)
+        public ContentTypeService(IContentTypeRepository ContentType, IDapperRepository Dapper)
         {
 
-            _Content = Content;
+            _ContentType = ContentType;
             _Dapper = Dapper;
         }
 
-        public async Task<Content> FindByCondition(Expression<Func<Content, bool>> Condition)
+        public async Task<ContentType> FindByCondition(Expression<Func<ContentType, bool>> Condition)
         {
             try
             {
-                return _Content.FindByCondition(Condition);
+                return _ContentType.FindByCondition(Condition);
             }
             catch (Exception ex)
             {
@@ -33,12 +30,12 @@ namespace ServiceLayer.Services
             }
         }
 
-        public async Task<IQueryable<Content>> FindAll()
+        public async Task<IQueryable<ContentType>> FindAll()
         {
 
             try
             {
-                return await _Content.FindAll();
+                return await _ContentType.FindAll();
             }
             catch (Exception ex)
             {
@@ -53,8 +50,8 @@ namespace ServiceLayer.Services
 
             try
             {
-                var TheContent = _Content.FindByCondition(a => a.IntID == id);
-                var Result = _Content.Delete(TheContent);
+                var TheContentType = _ContentType.FindByCondition(a => a.IntId == id);
+                var Result = _ContentType.Delete(TheContentType);
                 return Result;
             }
             catch (Exception ex)
@@ -64,12 +61,12 @@ namespace ServiceLayer.Services
             }
         }
 
-        public async Task<IQueryable<Content>> FindListByCondition(Expression<Func<Content, bool>> Condition)
+        public async Task<IQueryable<ContentType>> FindListByCondition(Expression<Func<ContentType, bool>> Condition)
         {
 
             try
             {
-                return _Content.FindListByCondition(Condition);
+                return _ContentType.FindListByCondition(Condition);
             }
             catch (Exception ex)
             {
@@ -78,30 +75,30 @@ namespace ServiceLayer.Services
                 return null;
             }
         }
-        public async Task<int?> GetIdWithCondition(Expression<Func<Content, bool>> Condition)
+        public async Task<int?> GetIdWithCondition(Expression<Func<ContentType, bool>> Condition)
         {
             try
             {
-                var FoundRecord = _Content.FindByCondition(Condition);
+                var FoundRecord = _ContentType.FindByCondition(Condition);
                 if (FoundRecord != null)
-                    return FoundRecord.IntID;
+                    return FoundRecord.IntId;
                 else
                     return null;
             }
             catch (Exception)
             {
-                Console.Write("This Content Is not Exist");
+                Console.Write("This ContentType Is not Exist");
 
                 return null;
             }
 
         }
 
-        public async Task<Content> GetWithId(int Id)
+        public async Task<ContentType> GetWithId(int Id)
         {
             try
             {
-                Content FindBuilding = _Content.FindByCondition(c => c.IntID == Id);
+                ContentType FindBuilding = _ContentType.FindByCondition(c => c.IntId == Id);
                 if (FindBuilding == null)
                 {
                     Console.WriteLine($"Can not Find Building With {Id} Id In Db");
@@ -118,18 +115,18 @@ namespace ServiceLayer.Services
             }
         }
 
-        public async Task<Content> Create(Content NewContent)
+        public async Task<ContentType> Create(ContentType NewContentType)
         {
             try
             {
-                if (await GetWithId(NewContent.IntID) == null)
+                if (await GetWithId(NewContentType.IntId) == null)
                 {
-                    Content GetRecord = _Content.Create(NewContent);
+                    ContentType GetRecord = _ContentType.Create(NewContentType);
                     return GetRecord;
                 }
                 else
                 {
-                    Console.WriteLine($"This ClassesCourse Name Is Already Exist => ClassesCourseName = {NewContent.IntID}");
+                    Console.WriteLine($"This ClassesCourse Name Is Already Exist => ClassesCourseName = {NewContentType.IntId}");
 
                     return null;
                 }
@@ -144,20 +141,7 @@ namespace ServiceLayer.Services
         }
 
 
-        public async Task<IQueryable<object>> FindWithTypeId(int ContentType)
-        {
-
-            try
-            {
-                return await _Dapper.GetAllContent(ContentType);
-            }
-            catch (Exception ex)
-            {
-                Console.Write(ex.Message);
-
-                return null;
-            }
-        }
+       
     }
 }
 

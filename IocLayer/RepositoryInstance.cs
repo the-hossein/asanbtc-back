@@ -14,6 +14,7 @@ namespace IocLayer
             services.AddScoped<IDapperRepository, DapperRepository>();
             services.AddScoped<IUserAccountRepository, UserAccountRepository>();
             services.AddScoped<IContentRepository, ContentRepository>();
+            services.AddScoped<IContentTypeRepository, ContentTypeRepository>();
         }
     }
 }

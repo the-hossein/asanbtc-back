@@ -16,16 +16,31 @@ namespace asanbtc_api.Controllers
     public class ContentController : Controller
     {
         private readonly IContentService _content;
-        public ContentController(IContentService content)
+        private readonly IContentTypeService _contentType;
+        public ContentController(IContentService content , IContentTypeService contentType)
         {
             _content = content;
+            _contentType = contentType;
         }
 
         // GET: api/values
-        [HttpGet(nameof(GetConfirmContent)), AllowAnonymous]
-        public async Task<ActionResult> GetConfirmContent()
+        [HttpGet(nameof(GetContentTypeItems)), AllowAnonymous]
+        public async Task<ActionResult> GetContentTypeItems()
         {
-            var AllContents = (await _content.FindAll());
+            var AllContentTypes = (await _contentType.FindAll());
+            return Ok(new ResultModel()
+            {
+                Code = Ok().StatusCode,
+                Data = AllContentTypes,
+                Message = "Get Content Types successfully"
+            });
+        }
+
+
+        [HttpGet(nameof(GetConfirmContent)), AllowAnonymous]
+        public async Task<ActionResult> GetConfirmContent(int ContentType)
+        {
+            var AllContents = (await _content.FindWithTypeId(ContentType));
             return Ok(new ResultModel()
             {
                 Code = Ok().StatusCode,
